@@ -4,7 +4,7 @@ This repo holds the landing page for Fresh Start Cabinet Coating. The frontend i
 
 
 **Live site** 
-https://fresh-start-cc.com
+[https://fresh-start-cc.com](https://landing.fresh-start-cc.com/)
 
 
 **Project Overview**
