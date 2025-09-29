@@ -1,0 +1,60 @@
+# Reference Architecture for Fresh Start CC Landing Page
+# Region: us-east-2
+
+DynamoDB:
+  TableName: k-customers
+  PartitionKey: email (String)
+  Streams: Enabled
+  Purpose: Store customer contact submissions
+
+SNS:
+  TopicName: k-customers-db-add
+  Subscription: email address (redacted for repo)
+  Purpose: Notify via email when new records are written to DB
+
+Lambdas:
+  - Name: customer-writer
+    Trigger: API Gateway (super-secret-api, /submit POST)
+    Destination: DynamoDB (k-customers)
+    IAM:
+      ManagedPolicies:
+        - AWSLambdaBasicExecutionRole
+      InlinePolicies:
+        - Name: PutItemToKCustomers
+          Statement:
+            Effect: Allow
+            Action: dynamodb:PutItem
+            Resource: arn:aws:dynamodb:us-east-2:account-id:table/k-customers
+
+  - Name: k-customers-db
+    Trigger: DynamoDB Streams (from k-customers)
+    Destination: SNS (k-customers-db-add)
+    IAM:
+      ManagedPolicies:
+        - AWSLambdaBasicExecutionRole
+        - AWSLambdaDynamoDBExecutionRole
+      InlinePolicies:
+        - Name: PublishToKCustomersTopic
+          Statement:
+            - Effect: Allow
+              Action: sns:Publish
+              Resource: arn:aws:sns:us-east-2:account-id:k-customers-db-add
+            - Effect: Allow
+              Action:
+                - dynamodb:DescribeStream
+                - dynamodb:GetRecords
+                - dynamodb:GetShardIterator
+                - dynamodb:ListStreams
+              Resource: "*"
+
+API Gateway:
+  Name: super-secret-api
+  Endpoint: /submit (POST)
+  Purpose: Accept form data from landing page and trigger customer-writer Lambda
+
+EC2:
+  InstanceType: t2.micro
+  OS: Amazon Linux 2
+  WebServer: Apache
+  Purpose: Hosts static landing page (index.html)
+
