@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fresh Start Cabinet Coating</title>
+  <meta name="color-scheme" content="light">
+  <style>
+:root{
+  --primary:#2B6CA3; 
+  --primary-700:#234f79;
+  --primary-100:#e6f0fa;
+  --secondary:#F6F7F9; 
+  --background:#FFFFFF;
+  --text:#2F2F2F; 
+  --muted:#6C727F; 
+  --accent:#B88A63;
+  --radius:16px; 
+  --shadow:0 10px 24px rgba(0,0,0,.08);
+  --shadow-md:0 6px 16px rgba(0,0,0,.1);
+  --shadow-lg:0 20px 40px rgba(0,0,0,.12);
+  --space:clamp(16px,2.8vw,28px); 
+  --space-lg:clamp(24px,4vw,40px);
+  --maxw:1200px; 
+  --transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast:all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-heading:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  --font-body:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+/* Moved header block outside :root */
+header {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden; /* ensures background doesn’t leak outside radius */
+}
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body{
+      margin:0; 
+      font-family: var(--font-body); 
+      background:var(--background); 
+      color:var(--text); 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased; 
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+  background: linear-gradient(180deg, #2b6ca3, #2f72ad);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
+  margin-bottom: -24px; /* pulls hero up under rounded edges */
+}
+    
+    .container {
+      max-width: var(--maxw); 
+      margin: 0 auto; 
+      padding: 0 var(--space);
+    }
+
+    /* Header */
+header {
+  background: linear-gradient(180deg, #2b6ca3, #2f72ad);
+  color: #fff; 
+  position: sticky; 
+  top: 0; 
+  z-index: 50;
+  box-shadow: 0 4px 14px rgba(31,61,103,.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.container {
+  max-width: var(--maxw); 
+  margin: 0 auto; 
+  padding: 0 var(--space);
+}
+
+/* 👇 Add these back in */
+.bar {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 16px;
+  padding: 12px 0;
+}
+
+header img {
+  height: 60px;
+  flex-shrink: 0;
+}
+
+header .tagline {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+    
+     header {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden; /* ensures background doesn’t leak outside radius */
+}
+    
+    @media (max-width: 640px){
+  .bar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  header img {
+    height: 56px;
+  }
+
+  header .tagline {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0;
+  }
+}
+
+
+    /* Hero */
+    .hero {
+      position: relative; 
+      isolation: isolate;
+      padding: clamp(80px, 12vw, 140px) var(--space) clamp(70px, 10vw, 110px);
+      color: #fff;
+      background: 
+        linear-gradient(180deg, rgba(20,45,76,0.3), rgba(20,45,76,0.6)),
+        url("s-c-1.jpg") center/cover no-repeat;
+      border-bottom-left-radius: 24px; 
+      border-bottom-right-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .hero .content {
+      max-width: 820px; 
+      margin: 0 auto; 
+      text-shadow: 0 2px 8px rgba(0,0,0,.25);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero h1 {
+      margin: 0 0 16px; 
+      font-size: clamp(32px, 5vw, 52px); 
+      line-height: 1.15; 
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .hero p {
+      margin: 0 0 28px; 
+      font-size: clamp(16px, 2.6vw, 22px); 
+      opacity: .98;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .btn {
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 14px 24px; 
+      border-radius: 999px; 
+      border: 0; 
+      font-weight: 600; 
+      letter-spacing: 0.5px; 
+      cursor: pointer; 
+      transition: var(--transition); 
+      box-shadow: 0 8px 20px rgba(0,0,0,.15); 
+      text-decoration: none;
+      min-width: 200px;
+      font-size: 16px;
+    }
+    
+    .btn-primary {
+      background: var(--primary); 
+      color: #fff;
+      transform: translateY(0);
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-700); 
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.2);
+    }
+    
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    section {
+      padding: var(--space-lg) 0;
+    }
+    
+    .section-title {
+      text-align: center; 
+      margin: 0 0 var(--space); 
+      font-size: clamp(22px, 3.2vw, 32px); 
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .usps {
+      display: grid; 
+      gap: var(--space); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .usp {
+      background: #fff; 
+      padding: 28px; 
+      border-radius: var(--radius); 
+      box-shadow: var(--shadow-md); 
+      text-align: center; 
+      transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.05);
+      transform: translateY(0);
+    }
+    
+    .usp:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .usp h3 {
+      margin: 12px 0 10px; 
+      color: var(--primary); 
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .usp p {
+      margin: 0; 
+      color: var(--muted); 
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .usp-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-100);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--primary);
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    /* Showcase slider */
+    .section-surface {
+      background: var(--secondary); 
+      border-radius: var(--radius); 
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    
+    .showcase h2 {
+      text-align: center; 
+      margin: 0 0 var(--space); 
+      color: var(--primary);
+      font-weight: 700;
+      font-size: clamp(24px, 3.5vw, 36px);
+    }
+    
+    .slider-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space);
+    }
+    
+    .slider {
+  position: relative; /* anchors nav buttons */
+  
+  margin-bottom: 20px;
+}
+
+    
+    .slide {
+      position: relative; 
+      overflow: hidden; 
+      border-radius: var(--radius); 
+      background: #fff; 
+      box-shadow: var(--shadow-md);
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .slide-figure {
+      position: relative; 
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    
+    .slide-figure img {
+      width: 100%; 
+      height: auto; 
+      aspect-ratio: 4/3;
+      object-fit: cover; 
+      border-radius: 10px; 
+      display: block; 
+      transition: opacity 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .slide-caption {
+      margin-top: 16px; 
+      font-weight: 700; 
+      color: var(--text);
+      text-align: center;
+      padding: 0 16px 16px;
+      font-size: 18px;
+    }
+
+    /* Toggle moved BELOW image */
+    .toggle {
+      margin: 20px 0; 
+      display: flex; 
+      justify-content: center; 
+      gap: 8px;
+      background: #f9fafb; 
+      border-radius: 999px; 
+      padding: 6px; 
+      box-shadow: var(--shadow);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .toggle button {
+      border: 0; 
+      padding: 10px 20px; 
+      border-radius: 999px; 
+      cursor: pointer;
+      background: transparent; 
+      color: var(--muted); 
+      font-weight: 600;
+      font-size: 15px;
+      transition: var(--transition-fast);
+      min-width: 80px;
+    }
+    
+    .toggle button.active {
+      background: var(--primary); 
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(43,108,163,0.3);
+    }
+    
+    .toggle button:hover {
+      transform: translateY(-1px);
+    }
+
+    .nav {
+      border: 0; 
+      height: 50px; 
+      width: 50px; 
+      border-radius: 50%; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; 
+      background: rgba(255,255,255,0.95); 
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      flex-shrink: 0;
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .nav svg {
+      width: 22px; 
+      height: 22px; 
+      fill: var(--primary);
+      transition: var(--transition-fast);
+    }
+    
+    .nav:hover svg {
+      transform: scale(1.1);
+    }
+    
+    .dots {
+      display: flex; 
+      gap: 10px; 
+      justify-content: center; 
+      margin: 24px 0 12px;
+    }
+    
+    .dot {
+      width: 12px; 
+      height: 12px; 
+      border-radius: 50%; 
+      background: #D5DAE1; 
+      border: 0; 
+      cursor: pointer; 
+      padding: 0; 
+      transition: var(--transition-fast);
+    }
+    
+    .dot.active {
+      background: var(--primary); 
+      transform: scale(1.2);
+      box-shadow: 0 0 8px rgba(43,108,163,0.4);
+    }
+
+    /* Testimonial & Contact */
+    .testimonial {
+      text-align: center; 
+      background: #fff; 
+      border-radius: var(--radius); 
+      box-shadow: var(--shadow-md); 
+      padding: var(--space);
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+
+    
+    .testimonial p {
+      margin: 0; 
+      font-size: clamp(16px, 2.2vw, 20px);
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+      line-height: 1.7;
+    }
+    
+    .testimonial .who {
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 16px;
+      font-size: 16px;
+    }
+    
+    .contact-form {
+      background: #fff; 
+      border-radius: var(--radius); 
+      box-shadow: var(--shadow-md); 
+      padding: var(--space-lg);
+      max-width: 680px; 
+      margin: 0 auto;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .contact-form h2 {
+      margin-top: 0; 
+      color: var(--primary); 
+      text-align: center;
+      font-weight: 700;
+      font-size: clamp(24px, 3.5vw, 36px);
+      margin-bottom: var(--space);
+    }
+    
+    .field {
+      display: flex; 
+      flex-direction: column; 
+      gap: 8px; 
+      margin-bottom: 20px;
+    }
+    
+    .field label {
+      font-weight: 600; 
+      color: var(--text); 
+      font-size: 15px;
+    }
+    
+    .field input, 
+    .field textarea {
+      border: 1px solid #E3E7EE; 
+      border-radius: 12px; 
+      padding: 14px 16px; 
+      font-size: 16px;
+      transition: var(--transition);
+      background: #fff;
+      outline: none;
+    }
+    
+    .field input:focus, 
+    .field textarea:focus {
+      outline: none; 
+      border-color: var(--primary); 
+      box-shadow: 0 0 0 4px rgba(43,108,163,.12);
+    }
+    
+    .contact-form .btn-primary {
+      width: 100%;
+      margin-top: 10px;
+      padding: 16px;
+      font-size: 18px;
+    }
+    
+    .form-success {
+      text-align: center;
+      padding: 20px;
+      background: #e6f0fa;
+      border-radius: 12px;
+      margin-top: 20px;
+      color: var(--primary);
+      font-weight: 600;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: var(--space-lg);
+      background: linear-gradient(180deg, #2f72ad, #2b6ca3);
+      color: #fff; 
+      text-align: center; 
+      padding: 32px var(--space) 24px;
+      border-top-left-radius: 24px; 
+      border-top-right-radius: 24px;
+      box-shadow: 0 -8px 24px rgba(31,61,103,.1) inset;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    }
+    
+    footer a {
+      color: #fff; 
+      text-decoration: none; 
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    
+    footer a:hover {
+      color: rgba(255,255,255,0.9);
+      text-decoration: underline;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .footer-contact {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    
+    .footer-contact a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .copyright {
+      margin-top: 20px;
+      opacity: 0.8;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    
+.slider {
+  position: relative;   /* anchor for buttons */
+  max-width: 1000px;
+  margin: 0 auto 20px;
+}
+
+.slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255,255,255,0.7);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  backdrop-filter: blur(6px);
+  z-index: 2; /* keep above slide */
+}
+
+.nav:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.nav.prev {
+  left: 12px;
+}
+
+.nav.next {
+  right: 12px;
+}
+
+
+    
+    
+    @media (max-width: 640px) {
+      .hero {
+        padding: 70px var(--space) 60px;
+        border-bottom-left-radius: 24px; 
+        border-bottom-right-radius: 24px;
+      }
+      
+      .hero h1 {
+        font-size: clamp(28px, 6vw, 40px);
+      }
+      
+      .hero p {
+        font-size: clamp(16px, 3vw, 18px);
+      }
+      
+      .btn {
+        padding: 14px 20px;
+        min-width: 160px;
+      }
+      
+      .contact-form {
+        padding: var(--space);
+      }
+      
+      .section-title {
+        font-size: clamp(20px, 3.5vw, 28px);
+      }
+      
+      .showcase h2 {
+        font-size: clamp(22px, 3.8vw, 32px);
+      }
+      
+      .usp {
+        padding: 24px;
+      }
+      
+      .usp h3 {
+        font-size: 18px;
+      }
+      
+      .usp p {
+        font-size: 15px;
+      }
+      
+      footer {
+        border-top-left-radius: 20px; 
+        border-top-right-radius: 20px;
+        padding: 24px var(--space) 18px;
+      }
+      
+      .footer-contact {
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation-duration: 0s !important;
+      }
+    }
+    
+    /* Animation for elements on scroll */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container bar">
+      <img src="k-logo.jpg" alt="Fresh Start Cabinet Coating Logo">
+      <div class="tagline">Serving Colorado Springs &amp; the Front Range</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container content animate-on-scroll">
+      <h1>Kitchen Cabinets Reimagined</h1>
+      <p>Beautiful finishes without the full remodel price tag. Over a decade of bringing new life to cabinets.</p>
+      <a class="btn btn-primary" href="#contact">Get Your Free Consultation</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- USPs -->
+    <section>
+      <h2 class="section-title animate-on-scroll">Why Choose Fresh Start</h2>
+      <div class="usps">
+        <div class="usp animate-on-scroll">
+          <div class="usp-icon">12+</div>
+          <h3>Years Experience</h3>
+          <p>Trusted cabinet refinishing experts for Colorado Springs &amp; the Front Range with hundreds of satisfied customers.</p>
+        </div>
+        <div class="usp animate-on-scroll">
+          <div class="usp-icon">✓</div>
+          <h3>Meticulous Process</h3>
+          <p>Durable, smooth finishes with daily clean-up and minimal disruption. We treat your home like our own.</p>
+        </div>
+        <div class="usp animate-on-scroll">
+          <div class="usp-icon">🎨</div>
+          <h3>Custom Colors</h3>
+          <p>Match your style with professional coatings that last. Choose from hundreds of colors or bring your own vision.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slideshow -->
+    <section class="section-surface showcase" id="gallery" style="padding: var(--space);">
+      <h2 class="animate-on-scroll">See the Results</h2>
+      
+      <div class="slider-container">
+        <div class="slider animate-on-scroll">
+          <button class="nav prev" aria-label="Previous project" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+
+          <div class="slide">
+            <figure class="slide-figure">
+              <img id="slide-img" src="up-after.jpg" alt="After kitchen">
+            </figure>
+
+            <div class="toggle" role="group" aria-label="Before after toggle">
+              <button type="button" data-mode="before">Before</button>
+              <button type="button" data-mode="after" class="active">After</button>
+            </div>
+
+            <div class="slide-caption" id="slide-caption">Main Kitchen Transformation — After</div>
+          </div>
+
+          <button class="nav next" aria-label="Next project" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+          </button>
+        </div>
+
+        <div class="dots" id="dots" aria-label="Slide indicators"></div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial animate-on-scroll">
+      <p>“Fresh Start transformed our cabinets beautifully! Quick, clean, and professional. We love our new kitchen!”</p>
+      <p class="who">— Sarah, Colorado Springs Homeowner</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-form animate-on-scroll">
+      <h2>Get Your Free Consultation</h2>
+      <form id="leadForm" method="POST" action="#">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your Full Name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" placeholder="Your Phone Number" required>
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="Your Email Address" required>
+        </div>
+        <div class="field">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your cabinet project..." style="resize: vertical;"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Request Consultation</button>
+        <div class="form-success" id="formSuccess">
+          Thank you! We'll contact you within 24 hours to schedule your consultation.
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-contact">
+        <a href="tel:7206507493">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+          </svg>
+          720-650-7493
+        </a>
+        <a href="mailto:freshstartcc@proton.me">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <path d="M22 6l-10 7L2 6"></path>
+          </svg>
+          freshstartcc@proton.me
+        </a>
+      </div>
+      <p>Serving Colorado Springs &amp; the Front Range for over 12 years</p>
+      <p class="copyright">© 2025 Fresh Start Cabinet Coating. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Slides config (update filenames as needed)
+    const slides = [
+      { title:"Spacious Kitchen Upgrade", before:"before-a.jpg",  after:"after-a.jpg",  altBefore:"Before kitchen", altAfter:"After kitchen" },
+      { title:"Kitchen and livingroom revitalization",       before:"before-b.jpg", after:"after-b.jpg", altBefore:"Before laundry room", altAfter:"After laundry room" },
+      { title:"Color Revival",           before:"before-c.jpg", after:"after-c.jpg", altBefore:"Before cabinets", altAfter:"After cabinets" },
+      { title:"New Life",           before:"before-d.jpg", after:"after-d.jpg", altBefore:"Before cabinets", altAfter:"After cabinets" },
+      { title:"Bathroom Beautification",           before:"before-e.jpg", after:"after-e.jpg", altBefore:"Before cabinets", altAfter:"After cabinets" },
+      { title:"Unrecognizable Kitchen Transformation",           before:"before-f.jpg", after:"after-f.jpg", altBefore:"Before cabinets", altAfter:"After cabinets" },
+
+    ];
+
+    let index = 0;
+    let mode = "after";
+
+    const imgEl = document.getElementById("slide-img");
+    const capEl = document.getElementById("slide-caption");
+    const dotsEl = document.getElementById("dots");
+    const toggleEl = document.querySelector(".toggle");
+    const beforeBtn = toggleEl.querySelector('[data-mode="before"]');
+    const afterBtn  = toggleEl.querySelector('[data-mode="after"]');
+
+    function render(){
+      const s = slides[index];
+      const src = mode === "before" ? s.before : s.after;
+      const alt = mode === "before" ? s.altBefore : s.altAfter;
+      imgEl.style.opacity = 0;
+      setTimeout(()=>{ 
+        imgEl.src = src; 
+        imgEl.alt = alt; 
+        imgEl.style.opacity = 1; 
+      }, 50);
+      capEl.textContent = s.title + " — " + (mode === "before" ? "Before" : "After");
+      beforeBtn.classList.toggle("active", mode==="before");
+      afterBtn.classList.toggle("active",  mode==="after");
+      document.querySelectorAll(".dot").forEach((d,i)=> d.classList.toggle("active", i===index));
+    }
+
+    // Build dots
+    slides.forEach((_,i)=>{
+      const b = document.createElement("button");
+      b.className = "dot";
+      b.setAttribute("aria-label", "Go to slide " + (i+1));
+      b.addEventListener("click", ()=>{
+        index = i; 
+        render();
+      });
+      dotsEl.appendChild(b);
+    });
+
+    document.querySelector(".nav.next").addEventListener("click", ()=>{
+      index = (index + 1) % slides.length; 
+      render();
+    });
+    
+    document.querySelector(".nav.prev").addEventListener("click", ()=>{
+      index = (index - 1 + slides.length) % slides.length; 
+      render();
+    });
+    
+    toggleEl.addEventListener("click", (e)=>{
+      const m = e.target.getAttribute("data-mode");
+      if(!m) return;
+      mode = m; 
+      render();
+    });
+
+    // Form submission
+    const form = document.getElementById('leadForm');
+    const successMsg = document.getElementById('formSuccess');
+    
+    form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    request: document.getElementById('message').value
+  };
+
+  try {
+    const res = await fetch("the-super-secret-api", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+
+if (res.ok) {
+  successMsg.innerText = "✅ Thank you!";
+  successMsg.style.display = 'block';
+  form.reset();
+
+  // Hide after 5 sec
+  setTimeout(() => {
+    successMsg.style.display = 'none';
+  }, 5000);
+} else {
+  alert("Error: " + (json.error || json.message));
+}
+} catch (err) {
+  alert("Submission failed: " + err.message);
+}
+});
+
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    
+    // Initial check
+    animateOnScroll();
+    
+    // Check on scroll
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Add animation delay for staggered effect
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach((el, index) => {
+        if (index > 0) {
+          el.style.transitionDelay = (index * 0.1) + 's';
+        }
+      });
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
