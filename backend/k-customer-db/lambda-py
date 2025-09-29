@@ -1,0 +1,24 @@
+import boto3
+import os
+import json
+
+sns = boto3.client("sns")
+SNS_TOPIC_ARN = os.environ["SNS_TOPIC_ARN"]
+
+def lambda_handler(event, context):
+    for record in event.get("Records", []):
+        if record.get("eventName") == "INSERT":
+            new_item = record["dynamodb"]["NewImage"]
+
+            message = {
+                "Event": "New item added to DynamoDB",
+                "Item": new_item
+            }
+
+            sns.publish(
+                TopicArn=SNS_TOPIC_ARN,
+                Message=json.dumps(message, indent=2),
+                Subject="DynamoDB Insert Notification"
+            )
+
+    return {"status": "done"}
